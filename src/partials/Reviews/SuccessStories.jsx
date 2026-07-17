@@ -83,10 +83,10 @@ const SuccessStories = () => {
           {/* Styled Navigation Buttons */}
           <div className="successStoriesBtn">
             <button className="nav-btn-prev" onClick={handlePrev}>
-              <img src="../../../assets/leftarrow-icon.png" alt="Previous" />
+              <img src="../ assets/leftarrow-icon.png" alt="Previous" />
             </button>
             <button className="nav-btn-next" onClick={handleNext}>
-              <img src="../../../assets/rightarrow-icon.png" alt="Next" />
+              <img src="../ assets/rightarrow-icon.png" alt="Next" />
             </button>
           </div>
         </div>

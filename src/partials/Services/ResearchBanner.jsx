@@ -30,7 +30,7 @@ const ResearchBanner = () => {
             </div>
           </div>
           <div className="researchBanner-col-right">
-            <img src="../../../assets/researchbanner.png" alt="Research Support Illustration" />
+            <img src="../ assets/researchbanner.png" alt="Research Support Illustration" />
           </div>
         </div>
       </div>

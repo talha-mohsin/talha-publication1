@@ -45,7 +45,7 @@ const Services = () => {
         description="We publish paper in journal with 24/7 support. Our trusted team of experts are at your disposal whenever you need them..."
         showBadges={true}
         textColor="#1a1a1a" // Dark text for light background
-        bgImage="../../../assets/girl2-bg.png"
+        bgImage="../ assets/girl2-bg.png"
         primaryButton={{
           text: "Learn More",
           variant: "red",

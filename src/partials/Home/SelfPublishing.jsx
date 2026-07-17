@@ -44,7 +44,7 @@ export default function SelfPublishing() {
 
         <div className="books-showcase">
           {/* Book 1: JANGE JOST BOLLE */}
-          <img src="../../assets/writter-books.png" alt="" />
+          <img src=" assets/writter-books.png" alt="" />
         </div>
       </div>
     </section>

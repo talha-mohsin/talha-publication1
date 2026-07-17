@@ -46,7 +46,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="footer-head-left">
             <div className="footer-logo">
-              <img src="../../assets/logo-footer.png" alt="Footer Logo" />
+              <img src=" assets/logo-footer.png" alt="Footer Logo" />
             </div>
             <p style={{ fontSize: "0.85rem", lineHeight: "1.6" }}>
               Among our employers: startups like torchsensors.com with
@@ -59,37 +59,37 @@ export default function Footer() {
             <h4>Follow Us</h4>
             <div className="social-links">
               <a href="#" className="social-icon" aria-label="Behance">
-                <img src="../../assets/social-icon1.png" alt="" />
+                <img src=" assets/social-icon1.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="Dribbble">
-                <img src="../../assets/social-icon2.png" alt="" />
+                <img src=" assets/social-icon2.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="Instagram">
-                <img src="../../assets/social-icon3.png" alt="" />
+                <img src=" assets/social-icon3.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="Twitter">
-                <img src="../../assets/social-icon4.png" alt="" />
+                <img src=" assets/social-icon4.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="LinkedIn">
-                <img src="../../assets/social-icon5.png" alt="" />
+                <img src=" assets/social-icon5.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="Instagram">
-                <img src="../../assets/social-icon6.png" alt="" />
+                <img src=" assets/social-icon6.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="Twitter">
-                <img src="../../assets/social-icon7.png" alt="" />
+                <img src=" assets/social-icon7.png" alt="" />
               </a>
               <a href="#" className="social-icon" aria-label="LinkedIn">
-                <img src="../../assets/social-icon8.png" alt="" />
+                <img src=" assets/social-icon8.png" alt="" />
               </a>
             </div>
 
             <div className="trust-badges">
               <div className="payment-badges-row">
-                <img src="../../assets/payment-group.png" alt="" />
+                <img src=" assets/payment-group.png" alt="" />
               </div>
               <div className="security-badges-row">
-                <img src="../../assets/trusted-footer.png" alt="" />
+                <img src=" assets/trusted-footer.png" alt="" />
               </div>
             </div>
           </div>

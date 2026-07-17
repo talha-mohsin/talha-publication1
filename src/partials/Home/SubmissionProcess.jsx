@@ -67,7 +67,7 @@ export default function SubmissionProcess() {
 
           {/* Center Showcase: Books Glittering Stars & Night Castle */}
           <div className="process-center-image">
-            <img src="../../assets/nightcastle-books.png" alt="" />
+            <img src=" assets/nightcastle-books.png" alt="" />
           </div>
 
           {/* Right Column Steps */}

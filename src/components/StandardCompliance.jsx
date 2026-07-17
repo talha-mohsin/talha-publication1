@@ -7,17 +7,17 @@ export default function StandardCompliance() {
     {
       title: 'Standard Compliance',
       description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: "../../assets/standardcard-icon.png"
+      icon: " assets/standardcard-icon.png"
     },
     {
       title: 'Standard Compliance',
       description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: "../../assets/standardcard-icon.png"
+      icon: " assets/standardcard-icon.png"
     },
     {
       title: 'Standard Compliance',
       description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: "../../assets/standardcard-icon.png"
+      icon: " assets/standardcard-icon.png"
     }
   ];
 

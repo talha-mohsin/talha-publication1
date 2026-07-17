@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className="container navbar-content">
           <div className="logo">
             <Link to="/">
-              <img src="../../assets/logo.png" alt="Logo" />
+              <img src=" assets/logo.png" alt="Logo" />
             </Link>
           </div>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
       <div className={`sidebar-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}></div>
       <aside className={`mobile-sidebar ${mobileMenuOpen ? 'active' : ''}`}>
         <div className="sidebar-header">
-          <img src="../../assets/logo-footer.png" alt="Logo" />
+          <img src=" assets/logo-footer.png" alt="Logo" />
           <button className="close-sidebar" onClick={() => setMobileMenuOpen(false)}><X size={28} /></button>
         </div>
 

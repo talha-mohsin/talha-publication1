@@ -77,14 +77,14 @@ export default function HolisticServices() {
             onClick={handlePrev}
             aria-label="Previous services"
           >
-            <img src="../../assets/leftarrow-icon.png" alt="Prev" />
+            <img src=" assets/leftarrow-icon.png" alt="Prev" />
           </button>
           <button
             className="slider-btn slider-btn-active"
             onClick={handleNext}
             aria-label="Next services"
           >
-            <img src="../../assets/rightarrow-icon.png" alt="Next" />
+            <img src=" assets/rightarrow-icon.png" alt="Next" />
           </button>
         </div>
       </div>

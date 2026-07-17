@@ -6,7 +6,7 @@ const Benefits = () => {
       <div className="container">
         <div className="benefits-col-left">
           <div className="benefits-col-left-icon">
-            <img src="../../../assets/worksubmission-icon.png" alt="" />
+            <img src="../ assets/worksubmission-icon.png" alt="" />
           </div>
           <p>
             Your trusted partner in research publication success, providing you

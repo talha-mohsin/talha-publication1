@@ -26,8 +26,8 @@ export default function CTABanner({
         {/* Conditionally render badges */}
         {showBadges && (
           <div className="best-imgs">
-            <img src="../../assets/bestchoice.png" alt="Best Choice" />
-            <img src="../../assets/bestquality.png" alt="Best Quality" />
+            <img src=" assets/bestchoice.png" alt="Best Choice" />
+            <img src=" assets/bestquality.png" alt="Best Quality" />
           </div>
         )}
 

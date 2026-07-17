@@ -9,25 +9,25 @@ export default function Testimonials() {
       text: "Working with your design team was an absolute pleasure. The attention to detail and creativity exceeded my expectations. Thank you for making my home beautiful!",
       name: "Sophie Carter",
       location: "New York, USA",
-      img: "../../assets/girl-circle.png", // Agar apna path ho toh update kar lein
+      img: " assets/girl-circle.png", // Agar apna path ho toh update kar lein
     },
     {
       text: "Working with your design team was an absolute pleasure. The attention to detail and creativity exceeded my expectations. Thank you for making my home beautiful!",
       name: "Sophie Carter",
       location: "New York, USA",
-      img: "../../assets/girl-circle.png",
+      img: " assets/girl-circle.png",
     },
     {
       text: "The manuscript review was extremely detailed and professional. They helped me get into a top tier medical journal on my very first attempt. Highly recommended!",
       name: "Dr. Arthur Pendelton",
       location: "London, UK",
-      img: "../../assets/girl-circle.png",
+      img: " assets/girl-circle.png",
     },
     {
       text: "The communication was seamless, the peer review feedback was incredibly valuable, and formatting was spot on. A flawless service experience!",
       name: "Elena Rostova",
       location: "Munich, Germany",
-      img: "../../assets/girl-circle.png",
+      img: " assets/girl-circle.png",
     },
   ];
 
@@ -68,7 +68,7 @@ export default function Testimonials() {
           {/* Left Column: Image & Controls */}
           <div className="testi-left-col">
             <div className="testi-image">
-              <img src="../../assets/customer-books.png" alt="Customer Books" />
+              <img src=" assets/customer-books.png" alt="Customer Books" />
             </div>
             
             {/* Custom Slider Buttons matching the screenshot */}

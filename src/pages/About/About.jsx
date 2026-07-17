@@ -46,7 +46,7 @@ const About = () => {
         description="We publish paper in journal with 24/7 support. Our trusted team of experts are at your disposal whenever you need them..."
         showBadges={true}
         textColor="#ffffff"
-        bgImage="../../assets/girl-background.png"
+        bgImage=" assets/girl-background.png"
         primaryButton={{
           text: "Slick Your Submission",
           variant: "red",
