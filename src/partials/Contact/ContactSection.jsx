@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Instagram, LocateIcon, Mail, Phone, Twitter } from "lucide-react";
-import ThankYou from "@/src/components/Thankyou";
+import ThankYou from "../../components/ThankYou";
 
 const ContactSection = () => {
   // 1. Form data ko track karne ke liye state
