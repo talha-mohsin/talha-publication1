@@ -1,4 +1,4 @@
-import ThankYou from "@/src/components/Thankyou";
+import ThankYou from "../../components/Thankyou";
 import React, {useState} from "react";
 
 const Hero = () => {
