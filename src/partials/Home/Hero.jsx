@@ -33,7 +33,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-image-container">
-          <img src="/public/assets/group-books.png" alt="" />
+          <img src="/assets/group-books.png" alt="" />
         </div>
       </div>
     </section>
