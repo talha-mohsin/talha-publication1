@@ -1,7 +1,6 @@
 import DatabaseSupport from "@/src/components/DatabaseSupport";
 import FAQs from "@/src/components/FAQs";
 import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import HelpBanner from "@/src/components/CTABanner";
 import HolisticServices from "@/src/components/HolisticServices";
 import Navbar from "@/src/components/Navbar";
@@ -17,7 +16,6 @@ import CTABanner from "@/src/components/CTABanner";
 const About = () => {
   return (
     <>
-      <Header />
       <Navbar />
       <Hero
         title={

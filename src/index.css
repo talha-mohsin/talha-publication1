@@ -176,38 +176,6 @@ ul {
   align-items: center;
 }
 
-/* --- Topbar & Header --- */
-.topbar {
-  background-color: #DA4B4F;
-  color: var(--color-white);
-  font-size: 0.85rem;
-  padding: 0.5rem 0;
-}
-
-.topbar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.topbar-left {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.topbar-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #e2e8f0;
-}
-
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 /* --- Navigation --- */
 .navbar {
   background-color: var(--color-white);

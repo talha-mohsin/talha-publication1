@@ -1,6 +1,5 @@
 import DatabaseSupport from "@/src/components/DatabaseSupport";
 import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
 import PeerReview from "@/src/components/PeerReview";
 import StandardCompliance from "@/src/components/StandardCompliance";
@@ -16,7 +15,6 @@ import ResearchBanner from "@/src/partials/Services/ResearchBanner";
 const PeerReviewService = () => {
   return (
     <>
-      <Header />
       <Navbar />
       <Hero
         title={

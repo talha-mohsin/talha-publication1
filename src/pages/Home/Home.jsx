@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { X, Send, Upload, Check, MessageSquare } from "lucide-react";
 
 // Import Partials
-import Header from "../../components/Header.jsx";
 import Navbar from "../../components/Navbar.jsx";
 import Hero from "../../partials/Home/Hero.jsx";
 import SelfPublishing from "../../partials/Home/SelfPublishing.jsx";
@@ -22,7 +21,6 @@ export default function Home() {
   return (
     <div style={{ position: "relative" }}>
       {/* Topbar and Main Navbar */}
-      <Header />
       <Navbar />
 
       {/* Main Single Page Sections */}

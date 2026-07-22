@@ -1,5 +1,4 @@
 import Footer from "@/src/components/Footer";
-import Header from "@/src/components/Header";
 import Navbar from "@/src/components/Navbar";
 import Hero from "@/src/partials/About/Hero";
 import ContactSection from "@/src/partials/Contact/ContactSection";
@@ -8,7 +7,6 @@ import React from "react";
 const Contact = () => {
   return (
     <>
-      <Header />
       <Navbar />
       <Hero
         title={
