@@ -14,14 +14,11 @@ const Reviews = () => {
       <Hero
         title={
           <>
-            Client Reviews | Words That <br /> Speak Volumes of{" "}
-            <span>
-              Our Service <br />
-            </span>{" "}
-            Excellence
+            ClieClient Reviews | Words That Mean Everything About{" "}
+            <span> Our Excellent Service</span>
           </>
         }
-        description="  is the preferred choice of researchers across the globe to meet their publication goals. Why? Let’s hear it from those who experienced our assistance."
+        description="The Journal Publishers is the first option for all researchers around the world when it comes to publishing needs. How come? Hear what our clients say. "
       />
       <SuccessStories />
       <FAQs />

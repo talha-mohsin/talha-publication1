@@ -225,13 +225,11 @@ ul {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--display-font);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-primary);
+  width: 150px;
+}
+
+.logo img {
+  width: 100%;
 }
 
 .logo-icon {
@@ -272,6 +270,37 @@ ul {
   font-size: 0.95rem;
 }
 
+
+.nav-item {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.nav-dropdown-menu li a {
+  display: block;
+  padding: 12px 20px;
+  color: #222;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-dropdown-menu li a:hover {
+  background: #f4f4f4;
+  color: #d62828;
+}
+
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-secondary);
@@ -300,6 +329,16 @@ ul {
 /* =========================================
    MOBILE SIDEBAR BASE STYLES
 ========================================= */
+.mobile-submenu {
+  padding-left: 20px;
+}
+
+.mobile-submenu a {
+  display: block;
+  padding: 10px 0;
+  font-size: 15px;
+}
+
 .sidebar-overlay {
   position: fixed;
   inset: 0;
@@ -344,6 +383,11 @@ ul {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header img {
+  filter: invert(1);
+  width: 150px;
 }
 
 .close-sidebar {
@@ -774,7 +818,8 @@ ul {
 
 .tags-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* Auto-fit aur minmax se layout kabhi kharab nahi hoga, ye khud space manage karega */
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 1rem;
   margin-bottom: 3.5rem;
 }
@@ -791,11 +836,52 @@ ul {
   font-weight: 500;
   color: var(--color-dark);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  text-align: left !important;
+  /* Parent .text-center ki setting ko khatam kar ke left karega */
+}
+
+.tag-item span {
+  text-align: left;
+  width: 100%;
 }
 
 .tag-icon {
   color: var(--color-secondary);
   flex-shrink: 0;
+  /* Icon apni jagah se hilay ga nahi */
+}
+
+/* =========================================
+   Responsive Breakpoints for Tags Grid
+   ========================================= */
+
+/* Laptop / Small Desktop (1200px se kam) */
+@media (max-width: 1200px) {
+  .tags-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet View (992px se kam) */
+@media (max-width: 992px) {
+  .tags-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Large View (768px se kam) */
+@media (max-width: 768px) {
+  .tags-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Small View (480px se kam) */
+@media (max-width: 480px) {
+  .tags-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==================
@@ -819,6 +905,8 @@ ul {
   border: 1px solid var(--color-border);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+  /* Sab cards ki height barabar rakhne ke liye */
 }
 
 .service-card:hover {
@@ -891,6 +979,43 @@ ul {
   background-color: #1E3E62 !important;
 }
 
+/* =========================================
+   Responsive Breakpoints for Services Grid
+   ========================================= */
+
+/* Tablet View (992px aur us se choti screens) */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns */
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile View (768px aur us se choti screens) */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    /* 1 Column (Single list view) */
+    gap: 1.25rem;
+  }
+
+  .holistic-services-section h2 {
+    font-size: 2.3rem;
+
+  }
+
+  .title-section, .section-title {
+    font-size: 2.3rem;
+
+  }
+
+  .service-card {
+    padding: 1.75rem 1.25rem;
+    /* Mobile par padding thori kam ki gayi hai */
+  }
+}
+
 /* --- Process Timeline Section --- */
 .process-section {
   background-color: var(--color-light-bg);
@@ -915,7 +1040,7 @@ ul {
 
 .process-card {
   background: none !important;
-  background-color: none !important;
+  background-color: transparent !important;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
@@ -957,42 +1082,47 @@ ul {
 .process-center-image {
   position: relative;
   height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .process-center-image img {
   height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
-.center-book-mockup-1 {
-  width: 180px;
-  height: 260px;
-  background: linear-gradient(135deg, #4f46e5 0%, #312e81 100%);
-  border-radius: 4px 10px 10px 4px;
-  box-shadow: -15px 15px 25px rgba(0, 0, 0, 0.3);
-  position: absolute;
-  transform: rotate(-12deg) translate(-20px, -20px);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.25rem;
-  color: white;
+/* =========================================
+   Responsive Breakpoints for Process Section
+   ========================================= */
+
+/* Tablet View (992px aur us se choti screens) */
+@media (max-width: 992px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+    /* 1 Column layout taake sab steps line me ayein */
+    gap: 3rem;
+  }
+
+  /* Center image ko upar ya beech mein adjust karne ke liye order set kar sakte hain, 
+     ya agar image ko center mein hi rakhna hai toh order: -1 kar dein taake wo sab se upar dikhe */
+  .process-center-image {
+    order: -1;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
 }
 
-.center-book-mockup-2 {
-  width: 180px;
-  height: 260px;
-  background: linear-gradient(135deg, #090d16 0%, #111827 100%);
-  border-radius: 4px 10px 10px 4px;
-  box-shadow: -10px 15px 25px rgba(0, 0, 0, 0.35);
-  position: absolute;
-  transform: rotate(8deg) translate(20px, 20px);
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.25rem;
-  color: white;
+/* Mobile View (768px aur us se choti screens) */
+@media (max-width: 768px) {
+  .process-center-image {
+    height: 250px;
+  }
+
+  .process-col {
+    gap: 2rem;
+  }
 }
 
 /* --- Banner Section --- */
@@ -1457,295 +1587,98 @@ ul {
   border-top: 1px solid var(--color-border);
 }
 
-/* --- Footer Styling --- */
 .footer {
   background: #1E3E62;
-  /* Solid color jaisa screenshot mein hai */
   color: #e2e8f0;
-  padding: 4rem 0 2rem;
+  padding: 2.5rem 0 1rem;
+  /* Padding kam ki gayi hai taake footer chota lage */
 }
 
-.footer-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-  margin-bottom: 4rem;
-  padding-bottom: 3rem;
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-head-left {
-  max-width: 450px;
+.brand-col {
+  max-width: 350px;
 }
 
 .footer-logo img {
-  width: 200px;
-  /* Logo ka size adjust karein */
-  margin-bottom: 1.5rem;
+  width: 150px;
+  /* Logo size chota kiya gaya hai */
+  filter: invert(1);
+  margin-bottom: 0.8rem;
 }
 
-/* --- Right Side: Social & Badges --- */
-.footer-head-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-head-right h4 {
-  color: white;
-  margin-bottom: 0.5rem;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.social-icon img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: translateY(-5px);
-}
-
-.trust-badges img {
-  max-width: 250px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* --- Main Grid Links --- */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 3rem;
+.footer-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #cbd5e1;
 }
 
 .footer-col h4 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.5rem;
+  /* Links ke darmiyan gap kam kiya gaya hai */
 }
 
 .footer-links a {
   color: #cbd5e1;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   text-decoration: none;
   transition: 0.3s;
 }
 
 .footer-links a:hover {
-  color: var(--color-secondary);
+  color: #ffffff;
 }
 
-/* --- Footer Bottom --- */
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
+.social-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
+  gap: 1rem;
+  color: white;
 }
 
-/* --- Responsiveness --- */
-
-/* Tablet View */
-@media (max-width: 992px) {
-  .footer-head {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  padding-top: 0.5rem;
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 1024px) {
-
-  .hero-grid,
-  .self-pub-grid,
-  .process-grid,
-  .testimonials-grid {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .process-grid {
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .process-center-image {
-    order: -1;
-    height: 300px;
-    margin: auto;
-  }
-
-  .compliance-grid,
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .tags-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .topbar-content {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-  }
-
-
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .compliance-grid,
-  .services-grid,
-  .tags-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-}
-
-
-/* =========================================
-   Premium Responsive Adjustments
-   ========================================= */
-
-/* Tablet View (iPad, etc.) */
 @media (max-width: 992px) {
-  .footer {
-    padding: 3rem 5% 1.5rem;
-    /* Sides mein thodi padding professional look deti hai */
-  }
-
-  .footer-head {
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: flex-start;
-    /* Center ke bajaye left align rakhein */
-    padding-bottom: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .footer-head-left {
-    max-width: 100%;
-  }
-
-  .footer-grid {
+  .footer-main-grid {
     grid-template-columns: repeat(2, 1fr);
-    /* Tablet par 2 columns */
-    gap: 2.5rem;
+    gap: 2rem;
   }
 }
 
-/* Mobile View (Phones) */
-@media (max-width: 768px) {
-  .footer {
-    padding: 2.5rem 5% 1rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    /* Mobile par links 2 column mein better lagte hain */
-    gap: 2rem 1rem;
-    text-align: left;
-    /* Center align hata diya gaya hai */
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: left;
-    align-items: flex-start;
-    /* Items left align */
-  }
-
-  .social-links {
-    justify-content: flex-start;
-  }
-
-  /* Footer logo thoda chota for mobile */
-  .footer-logo img {
-    width: 160px;
-  }
-}
-
-/* Extra Small Mobile (iPhone SE, etc.) */
-@media (max-width: 480px) {
-
-  .footer-head {
+@media (max-width: 576px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
     text-align: center;
+    gap: 1.5rem;
+  }
+
+  .brand-col {
+    max-width: 100%;
   }
 
   .social-links {
     justify-content: center;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    /* Bohat choti screen par 1 column */
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .social-icon img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .trust-badges img {
-    max-width: 100%;
-    /* Badges screen ke bahar na nikle */
   }
 }
 
@@ -2313,6 +2246,57 @@ Services Page Styling
   outline: none;
 }
 
+/* Modal Background Backdrop with Blur */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  /* Background Blur Effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Modal Content Wrapper */
+.modal-content-wrapper {
+  max-width: 500px;
+  width: 100%;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* Form Container inside Modal */
+.modal-form-box {
+  background: #ffffff;
+  /* Ya apke theme ke mutabiq background color */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Modal Animation */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
 /* Responsive */
 @media (max-width: 992px) {
   .services-hero-grid {
@@ -2778,8 +2762,7 @@ Services Page Styling
 
 .btn-outline {
   background-color: white;
-  border: 1.5px solid white;
-  color: white;
+  border: 1.5px solid #1E3E62;
 }
 
 .btn-outline:hover {
@@ -3306,7 +3289,7 @@ Services Page Styling
   width: 100vw;
   height: 100vh;
   /* Aapki background image */
-  background-image: url(' assets/hero-bg.png');
+  background-image: url('assets/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

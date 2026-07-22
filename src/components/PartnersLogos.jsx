@@ -4,13 +4,13 @@ const PartnersLogos = () => {
   const logos = [
     {
       name: "ROYAL SOCIETY OF CHEMISTRY",
-      img: " assets/partner-logo1.png",
+      img: "/assets/partner-logo1.png",
     },
-    { name: "FRONTIERS", img: " assets/partner-logo2.png" },
-    { name: "HINDAWI", img: " assets/partner-logo3.png" },
-    { name: "ELSEVIER", img: " assets/partner-logo4.png" },
-    { name: "EMERALD PUBLISHING", img: " assets/partner-logo5.png" },
-    { name: "KOREA UNIVERSITY", img: " assets/partner-logo6.png" },
+    { name: "FRONTIERS", img: "/assets/partner-logo2.png" },
+    { name: "HINDAWI", img: "/assets/partner-logo3.png" },
+    { name: "ELSEVIER", img: "/assets/partner-logo4.png" },
+    { name: "EMERALD PUBLISHING", img: "/assets/partner-logo5.png" },
+    { name: "KOREA UNIVERSITY", img: "/assets/partner-logo6.png" },
   ];
   
   return (

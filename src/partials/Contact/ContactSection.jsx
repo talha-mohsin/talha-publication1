@@ -94,10 +94,9 @@ const ContactSection = () => {
         {/* --- Left Red Card --- */}
         <div className="contact-content">
           <div className="contact-content-inner">
-            <h2>End-to-End Publishing Support</h2>
+            <h2>End-to-End Publishing Services</h2>
             <p className="contact-desc">
-              We help researchers and authors navigate the entire publishing
-              journey — from manuscript writing to journal acceptance.
+              From the stage of manuscript writing to acceptance into the journal, we support the complete publishing process for researchers and authors.
             </p>
 
             <div className="contact-form-links">

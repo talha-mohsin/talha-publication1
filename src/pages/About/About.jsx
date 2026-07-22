@@ -22,38 +22,93 @@ const About = () => {
       <Hero
         title={
           <>
-            About The{" "}
-            <span>
-              Journal <br /> Publishers
-            </span>
+            The <span> Journal Publishers </span> About Us
           </>
         }
-        description="Struggling with research paper publication? Stop worrying, you have got reliable experts to back you—Hire   today. We help scholars publish research in the top journals, employing our years of field experience and professional expertise. Consult with us today for an effortless publication process."
+        description="Curious about what drives The Journal Publishers to succeed in the publication of papers? Let us go through our values of service, tradition and quality-based approach that enables us to deliver success in publishing your paper. This page will help you learn more about our goals and team competence."
       />
       <Services />
-      <StandardCompliance />
-      <HolisticServices />
+      <StandardCompliance
+              cards={[
+                {
+                  title: "Transparency",
+                  description:
+                    " Transparency is our core principle when it comes to the services we provide and we maintain transparency through our operations.",
+                  icon: "/assets/standardcard-icon.png",
+                },
+                {
+                  title: "Integrity",
+                  description:
+                    "Our principle is that we should promote honesty, ethics and plagiarism-free research.",
+                  icon: "/assets/standardcard-icon.png",
+                },
+                {
+                  title: "Excellence",
+                  description:
+                    " Journal Publishers aims at maintaining the best possible standards within the services it provides.",
+                  icon: "/assets/standardcard-icon.png",
+                },
+              ]}
+            />
+      <HolisticServices
+        title={
+          <>
+            Publishing Your Research Paper -{" "}
+            <span> We Offer Complete Publishing </span> Solutions
+          </>
+        }
+        desc="Are you ready to publish research paper in journal? Take advantage of our complete solutions for research paper publishing."
+        services={[
+          {
+            title: "Research Writing",
+            description:
+              "Our research paper publishing service will assist you in writing an original and value-adding content for your research.",
+          },
+          {
+            title: "Editing/Proofreading",
+            description:
+              "Enhance your manuscript with the help of our industry experts who have relevant experience.",
+          },
+          {
+            title: "Formatting",
+            description:
+              "In whatever style MLA, APA, or Chicago, our experts format your manuscript according to the standards set by the journals.",
+          },
+          {
+            title: "Choosing a Journal",
+            description:
+              "Need some help in choosing a suitable journal? Our team will guide you in making appropriate choice for your research paper.",
+          },
+          {
+            title: "Plagiarism Detection",
+            description:
+              "If there are any issues relating to plagiarism, we provide reliable help in eliminating plagiarism.",
+          },
+          {
+            title: "Technical Review",
+            description:
+              "Make sure your manuscript is updated through us as we undertake the review process on various aspects of your manuscript.",
+          },
+        ]}
+      />
       <CTABanner
         title={
           <>
-            Get Professional{" "}
-            <span>
-              Journal <br /> Publication
-            </span>{" "}
-            Help 24/7!
+            Professional Assistance with <span> Paper Publication </span> in
+            Journals 24/7!
           </>
         }
-        description="We publish paper in journal with 24/7 support. Our trusted team of experts are at your disposal whenever you need them..."
+        description="Our qualified experts provide paper publication in journal services with 24/7 availability. You can avail the services of our experienced professionals anytime, as per your requirements, and we ensure you get the best assistance from us."
         showBadges={true}
         textColor="#ffffff"
-        bgImage=" assets/girl-background.png"
+        bgImage="/assets/girl-background.png"
         primaryButton={{
-          text: "Slick Your Submission",
+          text: "Quote Request",
           variant: "red",
           onClick: () => {},
         }}
         secondaryButton={{
-          text: "Live Chat",
+          text: "Chat Now",
           variant: "outline-white",
           onClick: () => {},
         }}
@@ -61,11 +116,10 @@ const About = () => {
       <DatabaseSupport
         title={
           <>
-            Get Journal Paper Publication Support <br /> Across Leading
-            Databases
+            Research Paper Publication Service at Low Cost ! Contact Now
           </>
         }
-        description="During our decade or more of service experience, we have assisted numerous authors, students and professionals with their academic goals. Our portfolio is a diverse exhibition of our work, reflecting our expertise in this field."
+        description="Are you looking for research paper publication services on low rates? We suggest you try The Journal Publishers, which provides cost-efficient services for our customers. Apart from being cheap, we provide you with custom quotes and flexible payment methods. Therefore, no need to worry about budget issues anymore. "
         buttonText="Submit Your Manuscript"
         bgImage={girlBg}
         reverseLayout={false}

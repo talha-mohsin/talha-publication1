@@ -6,29 +6,21 @@ export default function FAQs() {
 
   const faqData = [
     {
-      question: '1. What services do you offer?',
-      answer: 'An AI Music Generator is a tool that uses artificial intelligence to create original music tracks based on user inputs like genre, mood, instruments, or tempo.'
+      question: '1. Which type of journals you support?',
+      answer: 'The Journal Publishers offers publishing assistance for different kinds of Journal like Scopus, SCI, Web of Science, UGC-CARE, and other peer-reviewed International and National Journals. We also provide services for research papers from all the fields.'
     },
     {
-      question: '2. How long does a website project take?',
-      answer: 'Depending on the scope and complexity, a standard website project typically takes between 2 to 6 weeks, which includes discovery, design, development, content integration, and thorough testing.'
+      question: '2. What do I do if my paper is already rejected by a journal?',
+      answer: 'Yes, we do take on clients with rejected papers. Our expert team check the comments and edit the content as per the comments and also suggest the best matched journals for re-submission.'
     },
     {
-      question: '3. How long does a website project take?',
-      answer: 'Depending on the scope and complexity, a standard website project typically takes between 2 to 6 weeks, which includes discovery, design, development, content integration, and thorough testing.'
+      question: '3. Will my work be kept confidential and secure?',
+      answer: 'Yes, we take client protection and privacy very seriously. All your information and research work are kept confidential and our helpers sign an NDA. Also, we will not pass on your research to any third party and we have encryption technology for communication platforms.'
     },
     {
-      question: '4. How long does a website project take?',
-      answer: 'Depending on the scope and complexity, a standard website project typically takes between 2 to 6 weeks, which includes discovery, design, development, content integration, and thorough testing.'
+      question: '4. Are you guaranteed to publish?',
+      answer: 'No, we are not able to guarantee publication, the decision is with the editorial board for the journal. By improving the quality of the paper, however, improving the content and making it more in line with the journal standards would give you a better chance of success.'
     },
-    {
-      question: '5. How long does a website project take?',
-      answer: 'Depending on the scope and complexity, a standard website project typically takes between 2 to 6 weeks, which includes discovery, design, development, content integration, and thorough testing.'
-    },
-    {
-      question: '6. How long does a website project take?',
-      answer: 'Depending on the scope and complexity, a standard website project typically takes between 2 to 6 weeks, which includes discovery, design, development, content integration, and thorough testing.'
-    }
   ];
 
   const handleToggle = (index) => {
@@ -43,7 +35,7 @@ export default function FAQs() {
             Frequently Asked <span>Question</span>
           </h2>
           <p className="section-subtitle">
-            Have any queries or concerns regarding our service practices? Review our FAQ section or chat with us directly. We are available 24/7 to talk to you.
+            Are you at any time experiencing concern or questions about our services? Check our FAQ's or speak to us personally. We are here to discuss with you 24/7.
           </p>
         </div>
 

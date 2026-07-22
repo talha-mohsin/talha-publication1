@@ -2,24 +2,7 @@ import React from 'react';
 import ComplianceCard from './ComplianceCard.jsx';
 import { ShieldAlert, BookCheck, ClipboardCheck } from 'lucide-react';
 
-export default function StandardCompliance() {
-  const cards = [
-    {
-      title: 'Standard Compliance',
-      description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: " assets/standardcard-icon.png"
-    },
-    {
-      title: 'Standard Compliance',
-      description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: " assets/standardcard-icon.png"
-    },
-    {
-      title: 'Standard Compliance',
-      description: 'Whether you want to publish a paper in a science journal or the arts, we ensure compliance with standards.',
-      icon: " assets/standardcard-icon.png"
-    }
-  ];
+export default function StandardCompliance({cards}) {
 
   return (
     <section className="compliance-section" id="compliance">

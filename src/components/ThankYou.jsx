@@ -6,7 +6,7 @@ const ThankYou = ({ onClose }) => {
     <div className="thank-you-overlay">
       {/* Top Left Logo */}
       <div className="logo-container">
-        <img src=" assets/logo.png" alt=" " />
+        <img src="/assets/logo.png" alt=" " />
       </div>
 
       {/* Left Aligned Content Card */}

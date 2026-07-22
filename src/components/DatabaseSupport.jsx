@@ -34,6 +34,9 @@ export default function DatabaseSupport({
               text={buttonText2}
               variant="white" 
               onClick={onButtonClick}
+              style={{
+                marginLeft: "10px"
+              }}
             /> : ""}
           </div>
         </div>

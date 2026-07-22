@@ -15,7 +15,7 @@ const SuccessStoriesCard = ({ title, desc }) => {
       <p>{desc}</p>
       
       <div className="successCardFoot">
-        <img src="../ assets/successcardfoot.png" alt="icon" />
+        <img src="../assets/successcardfoot.png" alt="icon" />
         <span>Education Department</span>
       </div>
     </div>

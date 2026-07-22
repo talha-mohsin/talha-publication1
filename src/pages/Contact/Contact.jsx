@@ -13,14 +13,10 @@ const Contact = () => {
       <Hero
         title={
           <>
-            Ready to Begin? Share{" "}
-            <span>
-              Your <br /> Manuscript
-            </span>{" "}
-            Today!
+            Getting Started? Submit <span> Your Manuscript </span> Now!
           </>
         }
-        description="Start your publication journey with us—share your draft and let our experts work on it. We are available 24/7 to address your queries, concerns, and provide assistance whenever needed."
+        description="Kick off your publishing process by sharing your manuscript with us, and we will take care of it for you. Our team is available round-the-clock to answer any questions you may have. "
       />
       <ContactSection />
       <Footer />
