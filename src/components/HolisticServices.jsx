@@ -39,31 +39,12 @@ export default function HolisticServices({ title, desc, services }) {
               key={idx}
               title={srv.title}
               description={srv.description}
-              linkText="View Details"
               onLinkClick={(e) => {
                 e.preventDefault();
                 if (onContactClick) onContactClick();
               }}
             />
           ))}
-        </div>
-
-        {/* Navigation Buttons */}
-        <div className="slider-controls">
-          <button
-            className="slider-btn slider-btn-active"
-            onClick={handlePrev}
-            aria-label="Previous services"
-          >
-            <img src="/assets/leftarrow-icon.png" alt="Prev" />
-          </button>
-          <button
-            className="slider-btn slider-btn-active"
-            onClick={handleNext}
-            aria-label="Next services"
-          >
-            <img src="/assets/rightarrow-icon.png" alt="Next" />
-          </button>
         </div>
       </div>
     </section>

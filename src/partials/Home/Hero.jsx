@@ -29,7 +29,7 @@ export default function Hero() {
           </p>
           <div className="btn-group">
             <Button
-              text="Order Now"
+              text="Get Started"
               onClick={() => setIsModalOpen(true)}
               variant="red"
             />

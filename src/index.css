@@ -2017,13 +2017,6 @@ About Page Styling
   position: relative;
 }
 
-.about-services-content {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  height: 500px;
-}
-
 .about-services-head {
   display: flex;
   align-items: center;
@@ -2031,9 +2024,25 @@ About Page Styling
   gap: 40px;
 }
 
+.about-services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* height: 500px; <-- Yeh remove kar diya hai taake extra space khatam ho jaye */
+}
+
+.about-services-content .title-section {
+  margin-bottom: 20px;
+}
+
+.about-services-desc {
+  line-height: 1.6;
+}
+
 .about-services-img img {
   border-radius: 20px;
   max-width: 100%;
+  display: block;
 }
 
 .text-red {
@@ -2046,26 +2055,23 @@ About Page Styling
   color: white;
   padding: 40px;
   border-radius: 15px;
-  margin-top: -150px;
-  /* Pulls the box up to overlap */
+  margin-top: -60px; /* Negative margin ko thora kam kiya hai taake overflow/gap control rahe */
   transform: translateX(290px);
   position: relative;
   width: 650px;
   z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-item {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr); /* Items ko 2 columns me divide kar diya hai taake box neat lagay */
+  gap: 15px 30px;
 }
 
 .service-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
-.service-item p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  opacity: 0.9;
+  font-size: 1.1rem;
+  margin: 0;
 }
 
 /* Responsive */
@@ -2075,19 +2081,19 @@ About Page Styling
   }
 
   .about-services-content {
-    height: auto;
     text-align: center;
-    margin: auto;
-    display: flex;
     align-items: center;
   }
 
   .about-services-foot {
-    margin-top: 50px;
-    grid-template-columns: 1fr;
+    margin-top: 40px;
     transform: translateX(0px);
-    margin: auto;
-    width: 95%;
+    width: 100%;
+  }
+
+  .service-item {
+    grid-template-columns: 1fr; /* Mobile par single column */
+    text-align: center;
   }
 }
 

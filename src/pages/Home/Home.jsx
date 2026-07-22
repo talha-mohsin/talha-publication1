@@ -14,7 +14,7 @@ import Testimonials from "../../components/Testimonials.jsx";
 import FAQs from "../../components/FAQs.jsx";
 import Footer from "../../components/Footer.jsx";
 import PartnersLogos from "@/src/components/PartnersLogos.jsx";
-import girlBg from "../../../assets/girl-bg.png";
+import girlBg from "/assets/girl-bg.png";
 import CTABanner from "../../components/CTABanner.jsx";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
         }
         desc="Do you get tired of the endless process of journal publication? Do you need help with preparing rebuttals? If yes, then you should go to Thejournalpublishers.com, the best The Journal Publishers who can be proud of having a great number of helpers and publishing professionals."
         desc2="We will assist you in all stages of publishing process. From manuscript preparation to submission process - we are the professionals! Our editors, proofreaders and technical helpers know the different requirements of journals on various disciplines and act according to them. So there is no need to worry anymore, just contact us right now and get your paper published in the best journal!"
-        btn1="Submit here"
+        btn1="Get Started"
         btn2="Contact Us"
       />
       <StandardCompliance

@@ -9,7 +9,7 @@ import StandardCompliance from "@/src/components/StandardCompliance";
 import Testimonials from "@/src/components/Testimonials";
 import Hero from "@/src/partials/About/Hero";
 import Services from "@/src/partials/About/Services";
-import girlBg from "../../../assets/girl-bg.png";
+import girlBg from "/assets/girl-bg.png";
 import React from "react";
 import CTABanner from "@/src/components/CTABanner";
 

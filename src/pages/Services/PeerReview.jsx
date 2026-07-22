@@ -5,7 +5,7 @@ import PeerReview from "@/src/components/PeerReview";
 import StandardCompliance from "@/src/components/StandardCompliance";
 import SelfPublishing from "@/src/partials/Home/SelfPublishing";
 import Hero from "@/src/partials/Services/Hero";
-import publishingBg from "../../../assets/man-bg.png";
+import publishingBg from "/assets/man-bg.png";
 import React from "react";
 import CTABanner from "@/src/components/CTABanner";
 import WorkSubmission from "@/src/partials/Services/WorkSubmission";
