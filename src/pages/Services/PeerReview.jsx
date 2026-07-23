@@ -11,6 +11,7 @@ import CTABanner from "@/src/components/CTABanner";
 import WorkSubmission from "@/src/partials/Services/WorkSubmission";
 import Benefits from "@/src/partials/Services/Benefits";
 import ResearchBanner from "@/src/partials/Services/ResearchBanner";
+import ContactSection from "@/src/partials/Contact/ContactSection";
 
 const PeerReviewService = () => {
   return (
@@ -174,6 +175,7 @@ const PeerReviewService = () => {
         btn1="Need Assistance"
         btn2="Contact Us"
       />
+      <ContactSection />
       <Footer />
     </>
   );

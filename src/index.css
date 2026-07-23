@@ -1559,12 +1559,11 @@ ul {
   background: #1E3E62;
   color: #e2e8f0;
   padding: 2.5rem 0 1rem;
-  /* Padding kam ki gayi hai taake footer chota lage */
 }
 
 .footer-main-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr 1.5fr;
   gap: 2rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
@@ -1572,12 +1571,11 @@ ul {
 }
 
 .brand-col {
-  max-width: 350px;
+  max-width: 300px;
 }
 
 .footer-logo img {
   width: 150px;
-  /* Logo size chota kiya gaya hai */
   filter: invert(1);
   margin-bottom: 0.8rem;
 }
@@ -1598,7 +1596,6 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* Links ke darmiyan gap kam kiya gaya hai */
 }
 
 .footer-links a {
@@ -1616,6 +1613,29 @@ ul {
   display: flex;
   gap: 1rem;
   color: white;
+  cursor: pointer;
+}
+
+/* Contact Info Styling for 5th Column */
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #ffffff;
 }
 
 /* Footer Bottom */
@@ -1627,6 +1647,13 @@ ul {
 }
 
 /* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 992px) {
   .footer-main-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1647,6 +1674,11 @@ ul {
 
   .social-links {
     justify-content: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+    text-align: center;
   }
 }
 

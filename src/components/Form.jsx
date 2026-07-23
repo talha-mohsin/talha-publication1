@@ -85,7 +85,7 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
 
       <div className={`services-hero-form-container ${isModal ? "modal-form-box" : ""}`}>
         <div className="form-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h3>Place an order</h3>
+          <h3>Let's Get Started!</h3>
           {/* Modal ke liye Close (X) Button */}
           {isModal && (
             <button 

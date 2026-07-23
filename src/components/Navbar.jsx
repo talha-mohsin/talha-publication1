@@ -18,7 +18,7 @@ export default function Navbar() {
     { label: "About Us", path: "/about" },
     {
       label: "Services",
-      path: "/services",
+      path: "/#services",
       children: [
         {
           label: "Peer Review Service",

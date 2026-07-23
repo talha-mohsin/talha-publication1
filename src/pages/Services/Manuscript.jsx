@@ -11,6 +11,7 @@ import CTABanner from "@/src/components/CTABanner";
 import WorkSubmission from "@/src/partials/Services/WorkSubmission";
 import Benefits from "@/src/partials/Services/Benefits";
 import ResearchBanner from "@/src/partials/Services/ResearchBanner";
+import ContactSection from "@/src/partials/Contact/ContactSection";
 
 const Manuscript = () => {
   return (
@@ -168,6 +169,7 @@ const Manuscript = () => {
         btn1="In need of help?"
         btn2="Contact Us"
       />
+      <ContactSection />
       <Footer />
     </>
   );

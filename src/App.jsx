@@ -6,7 +6,6 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Reviews from './pages/Reviews/Reviews';
-import Services from './pages/Services/PeerReview';
 import Terms from './pages/Terms/Terms';
 import Privacy from './pages/Privacy/Privacy';
 import Manuscript from './pages/Services/Manuscript';
@@ -18,7 +17,6 @@ const App = () => {
       <Routes>  
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
         <Route path="/services/peer-review" element={<PeerReviewService />} />
         <Route path="/services/manuscript" element={<Manuscript />} />
         <Route path="/reviews" element={<Reviews />} />
