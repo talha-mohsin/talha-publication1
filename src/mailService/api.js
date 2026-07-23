@@ -18,8 +18,6 @@ export const sendMailData = async (dataObject) => {
       body: formData, 
     });
 
-    console.log("response ====>", response)
-
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
