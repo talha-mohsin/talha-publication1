@@ -3295,7 +3295,7 @@ Services Page Styling
   width: 100vw;
   height: 100vh;
   /* Aapki background image */
-  background-image: url('assets/hero-bg.png');
+  background-image: url('/assets/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
