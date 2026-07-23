@@ -12,7 +12,7 @@ import Services from "@/src/partials/About/Services";
 import girlBg from "/assets/girl-bg.png";
 import React from "react";
 import CTABanner from "@/src/components/CTABanner";
-import ContactSection from "@/src/partials/Contact/ContactSection";
+import ContactSection from "@/src/components/ContactSection";
 
 const About = () => {
   return (

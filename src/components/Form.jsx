@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
 import ThankYou from "./ThankYou";
+import { sendMailData } from "../mailService/api";
 
 const Form = ({ isModal = false, isOpen = true, onClose }) => {
-  // 1. Data track karne ke liye state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,18 +12,16 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
     message: "",
   });
 
-  // 2. Errors track karne ke liye state
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // <-- Loading state
+  const [apiError, setApiError] = useState(""); // <-- API Error state
 
-  // Agar modal open nahi hai toh kuch render na ho
   if (isModal && !isOpen) return null;
 
-  // 3. Input Handle Logic (Phone validation yahi hogi)
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Phone: Sirf numbers allow aur max length 11
     if (name === "phone") {
       if (value.length > 11) return;
       if (value !== "" && !/^\d+$/.test(value)) return;
@@ -31,51 +29,56 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
 
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // User jab type kare to error remove kar dein
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: null }));
     }
   };
 
-  // 4. Submit par Validation Check
   const validateForm = () => {
     let newErrors = {};
-
     if (!formData.name.trim()) newErrors.name = "Name is required.";
-
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required.";
     } else if (formData.phone.length < 10) {
       newErrors.phone = "Must be at least 10 digits.";
     }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "Enter a valid email.";
     }
-
     if (!formData.services.trim()) newErrors.services = "Service is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  // 5. Submit Handler
-  const handleSubmit = (e) => {
+  // <-- Updated Submit Handler
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // Form fields ko reset karna
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        services: "",
-        message: "",
-      });
+      setIsLoading(true);
+      setApiError("");
 
-      setIsSubmitted(true);
+      try {
+        // API Call
+        await sendMailData(formData);
+        
+        // Success hone par form reset aur Thank You screen show
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          services: "",
+          message: "",
+        });
+        setIsSubmitted(true);
+      } catch (error) {
+        setApiError("Failed to send your message. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -86,7 +89,6 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
       <div className={`services-hero-form-container ${isModal ? "modal-form-box" : ""}`}>
         <div className="form-head" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h3>Let's Get Started!</h3>
-          {/* Modal ke liye Close (X) Button */}
           {isModal && (
             <button 
               type="button" 
@@ -100,7 +102,6 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
         </div>
 
         <form className="services-hero-form" onSubmit={handleSubmit}>
-          {/* Name Field */}
           <div className="input-wrapper">
             <input
               type="text"
@@ -113,7 +114,6 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
             {errors.name && <span className="error-msg">{errors.name}</span>}
           </div>
 
-          {/* Email Field */}
           <div className="input-wrapper">
             <input
               type="email"
@@ -126,7 +126,6 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
             {errors.email && <span className="error-msg">{errors.email}</span>}
           </div>
 
-          {/* Phone Field */}
           <div className="input-wrapper">
             <input
               type="text"
@@ -139,7 +138,6 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
             {errors.phone && <span className="error-msg">{errors.phone}</span>}
           </div>
 
-          {/* Services Field */}
           <div className="input-wrapper">
             <input
               type="text"
@@ -149,12 +147,9 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
               placeholder="Services *"
               className={errors.services ? "input-error" : ""}
             />
-            {errors.services && (
-              <span className="error-msg">{errors.services}</span>
-            )}
+            {errors.services && <span className="error-msg">{errors.services}</span>}
           </div>
 
-          {/* Message Field (Optional) */}
           <div className="input-wrapper">
             <textarea
               name="message"
@@ -164,13 +159,17 @@ const Form = ({ isModal = false, isOpen = true, onClose }) => {
             />
           </div>
 
-          <button type="submit">Submit Now</button>
+          {/* Show API Error if any */}
+          {apiError && <p style={{ color: "red", fontSize: "14px", marginTop: "5px" }}>{apiError}</p>}
+
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Sending..." : "Submit Now"}
+          </button>
         </form>
       </div>
     </>
   );
 
-  // Agar modal true hai toh background backdrop aur blur ke sath wrap karein
   if (isModal) {
     return (
       <div className="modal-backdrop" onClick={onClose}>

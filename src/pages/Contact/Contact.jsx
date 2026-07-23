@@ -1,7 +1,7 @@
 import Footer from "@/src/components/Footer";
 import Navbar from "@/src/components/Navbar";
 import Hero from "@/src/partials/About/Hero";
-import ContactSection from "@/src/partials/Contact/ContactSection";
+import ContactSection from "@/src/components/ContactSection";
 import React from "react";
 
 const Contact = () => {

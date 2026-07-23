@@ -16,7 +16,7 @@ import Footer from "../../components/Footer.jsx";
 import PartnersLogos from "@/src/components/PartnersLogos.jsx";
 import girlBg from "/assets/girl-bg.png";
 import CTABanner from "../../components/CTABanner.jsx";
-import ContactSection from "@/src/partials/Contact/ContactSection.jsx";
+import ContactSection from "@/src/components/ContactSection.jsx";
 
 export default function Home() {
   return (

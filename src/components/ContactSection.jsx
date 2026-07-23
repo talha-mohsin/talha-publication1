@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Instagram, LocateIcon, Mail, Phone, Twitter } from "lucide-react";
-import ThankYou from "../../components/ThankYou";
+import ThankYou from "./ThankYou";
+import { sendMailData } from "../mailService/api";
 
 const ContactSection = () => {
-  // 1. Form data ko track karne ke liye state
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -12,82 +12,70 @@ const ContactSection = () => {
     message: "",
   });
 
-  // 2. Errors ko track karne ke liye state
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // <-- Loading state
+  const [apiError, setApiError] = useState(""); // <-- API error state
 
-  // 3. Input change handle karne ka function
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Phone validation: Sirf numbers allow karein aur max length 11 rakhein
     if (name === "phone") {
-      if (value.length > 11) return; // 11 se zyada type nahi hoga
-      if (value !== "" && !/^\d+$/.test(value)) return; // Sirf numbers allow honge
+      if (value.length > 11) return; 
+      if (value !== "" && !/^\d+$/.test(value)) return; 
     }
-
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-    // Jab user type karna shuru kare toh error hata dein
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: null }));
     }
   };
 
-  // 4. Submit par rules check karne ka function
   const validateForm = () => {
     let newErrors = {};
-
-    // Name Validation
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
-    }
-
-    // Phone Validation
+    if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required.";
     } else if (formData.phone.length < 10) {
-      // Minimum length check (optional but good)
       newErrors.phone = "Phone number must be at least 10 digits.";
     }
-
-    // Email Validation (Regex)
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "Enter a valid email address.";
     }
-
-    // Services Validation
-    if (!formData.services.trim()) {
-      newErrors.services = "Service is required.";
-    }
+    if (!formData.services.trim()) newErrors.services = "Service is required.";
 
     setErrors(newErrors);
-    // Agar newErrors object khali hai, iska matlab form valid hai
     return Object.keys(newErrors).length === 0;
   };
 
-  // 5. Form Submit Handler
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Page refresh hone se roke
-
+  // <-- Updated Submit Handler
+  const handleSubmit = async (e) => {
+    e.preventDefault(); 
     if (validateForm()) {
-      // Form ko reset kar dein
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        services: "",
-        message: "",
-      });
+      setIsLoading(true);
+      setApiError("");
 
-      setIsSubmitted(true);
+      try {
+        // API call
+        await sendMailData(formData);
+
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          services: "",
+          message: "",
+        });
+        setIsSubmitted(true);
+      } catch (error) {
+        setApiError("Failed to send message. Please try again later.");
+      } finally {
+        setIsLoading(false);
+      }
     }
-
-
   };
+
   return (
     <section className="contact-section" id="home">
       <div className="container contact-grid">
@@ -138,10 +126,8 @@ const ContactSection = () => {
               <div className="social-icon">
                 <Instagram size={16} />
               </div>
-              {/* Using a placeholder for Discord assuming you have the component */}
               <div className="social-icon">
                 <span style={{ fontWeight: "bold", fontSize: "12px" }}>D</span>
-                {/* <Discord size={16} /> */}
               </div>
             </div>
           </div>
@@ -152,7 +138,6 @@ const ContactSection = () => {
         {/* --- Right White Form Card --- */}
         <div className="contact-form-container">
           <div className="contact-form-head">
-            {/* Kept your exact text 'Place an order' but styled it like the image */}
             <h1 className="title-section contact-form-title">
               Send Us a Message
             </h1>
@@ -227,8 +212,13 @@ const ContactSection = () => {
               />
             </label>
 
+            {/* API Error Message */}
+            {apiError && <div className="full-width"><p style={{ color: "red", fontSize: "14px", marginTop: "10px" }}>{apiError}</p></div>}
+
             <div className="submit-btn-wrapper full-width">
-              <button type="submit">Submit Now</button>
+              <button type="submit" disabled={isLoading}>
+                {isLoading ? "Sending..." : "Submit Now"}
+              </button>
             </div>
           </form>
         </div>
