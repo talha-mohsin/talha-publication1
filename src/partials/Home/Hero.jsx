@@ -38,11 +38,6 @@ export default function Hero() {
               variant="outline-white"
               icon={<MessageSquare size={16} />}
             />
-            <Form
-              isModal={true}
-              isOpen={isModalOpen}
-              onClose={() => setIsModalOpen(false)}
-            />
           </div>
         </div>
 
@@ -50,6 +45,11 @@ export default function Hero() {
           <img src="/assets/group-books.png" alt="" />
         </div>
       </div>
+      <Form
+              isModal={true}
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+            />
     </section>
   );
 }

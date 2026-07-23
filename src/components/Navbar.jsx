@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Menu,
-  X,
-  Mail,
-  Phone,
-  ChevronDown,
-} from "lucide-react";
+import { Menu, X, Mail, Phone, ChevronDown } from "lucide-react";
 import Button from "../components/Button.jsx";
+import Form from "./Form.jsx";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false); // Mobile Dropdown ke liye alag state
-  const location = useLocation(); 
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const location = useLocation();
 
   const menuItems = [
     { label: "Home", path: "/" },
@@ -60,7 +58,7 @@ export default function Navbar() {
                 onMouseEnter={() => item.children && setOpenDropdown(true)}
                 onMouseLeave={() => item.children && setOpenDropdown(false)}
                 // Click per open/close hone ka logic
-                onClick={() => item.children && setOpenDropdown(!openDropdown)} 
+                onClick={() => item.children && setOpenDropdown(!openDropdown)}
                 style={{ position: "relative" }}
               >
                 <Link
@@ -70,7 +68,7 @@ export default function Navbar() {
                 >
                   {item.label}
                   {/* Parent Link par Icon ab display hoga */}
-                  {item.children && <ChevronDown size={16} />} 
+                  {item.children && <ChevronDown size={16} />}
                 </Link>
 
                 {item.children && openDropdown && (
@@ -89,9 +87,9 @@ export default function Navbar() {
           <div className="nav-actions">
             <div className="desktop-cta">
               <Button
-                text="+0000000000"
+                text="Get Started"
+                onClick={() => setIsModalOpen(true)}
                 variant="navy"
-                href="tel:+0000000000"
               />
             </div>
             <button
@@ -109,7 +107,7 @@ export default function Navbar() {
         className={`sidebar-overlay ${mobileMenuOpen ? "active" : ""}`}
         onClick={() => setMobileMenuOpen(false)}
       ></div>
-      
+
       <aside className={`mobile-sidebar ${mobileMenuOpen ? "active" : ""}`}>
         <div className="sidebar-header">
           <img src="/assets/Pubmed-Publish-BW-.png" alt="Logo" />
@@ -125,7 +123,13 @@ export default function Navbar() {
           <nav className="sidebar-nav">
             {menuItems.map((item) => (
               <div key={item.path} style={{ marginBottom: "15px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
                   <Link
                     to={item.path}
                     className={location.pathname === item.path ? "active" : ""}
@@ -136,13 +140,25 @@ export default function Navbar() {
 
                   {/* Icon yahan Parent (Services) ke samne lagaya gaya hai */}
                   {item.children && (
-                    <button 
+                    <button
                       onClick={() => setMobileSubmenuOpen(!mobileSubmenuOpen)}
-                      style={{ background: "transparent", border: "none", color: "white", cursor: "pointer", display: "flex", alignItems: "center" }}
+                      style={{
+                        background: "transparent",
+                        border: "none",
+                        color: "white",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                      }}
                     >
-                      <ChevronDown 
-                        size={22} 
-                        style={{ transform: mobileSubmenuOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }} 
+                      <ChevronDown
+                        size={22}
+                        style={{
+                          transform: mobileSubmenuOpen
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
+                          transition: "0.3s",
+                        }}
                       />
                     </button>
                   )}
@@ -150,7 +166,16 @@ export default function Navbar() {
 
                 {/* Submenu sirf tab dikhega jab toggle (click) hoga */}
                 {item.children && mobileSubmenuOpen && (
-                  <div className="mobile-submenu" style={{ display: "flex", flexDirection: "column", gap: "10px", paddingLeft: "15px", marginTop: "10px" }}>
+                  <div
+                    className="mobile-submenu"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "10px",
+                      paddingLeft: "15px",
+                      marginTop: "10px",
+                    }}
+                  >
                     {item.children.map((child) => (
                       <Link
                         key={child.path}
@@ -178,10 +203,20 @@ export default function Navbar() {
               <a href="mailto:info@example.com">info@example.com</a>
             </div>
             <div className="contact-item">
-              <Phone size={18} /> <a href="tel:+0000000000">+00 000 00000</a>
+              <Button
+                text="Get Started"
+                onClick={() => setIsModalOpen(true)}
+                variant="red"
+              />
             </div>
           </div>
         </div>
+
+        <Form
+          isModal={true}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </aside>
     </>
   );

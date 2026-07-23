@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "./Button.jsx";
+import Form from "./Form.jsx";
 
 export default function CTABanner({
   title,
@@ -11,8 +12,10 @@ export default function CTABanner({
   fgImage,
   textColor = "#ffffff" // Default color white
 }) {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <section 
+    <section  
       className="cta-banner-section" 
       style={{ 
         backgroundImage: `url(${bgImage})`,
@@ -34,10 +37,9 @@ export default function CTABanner({
         <div className="btn-group banner-buttons">
           {primaryButton && (
             <Button
-              text={primaryButton.text}
-              variant={primaryButton.variant}
-              icon={primaryButton.icon}
-              onClick={primaryButton.onClick}
+              text="Get Started"
+              onClick={() => setIsModalOpen(true)}
+              variant="red"
             />
           )}
           {secondaryButton && (
@@ -57,6 +59,11 @@ export default function CTABanner({
           <img src={fgImage} alt="Banner Graphic" />
         </div>
       )}
+      <Form
+          isModal={true}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
     </section>
   );
 }

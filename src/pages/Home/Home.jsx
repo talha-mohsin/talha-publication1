@@ -36,7 +36,7 @@ export default function Home() {
         desc2="We will assist you in all stages of publishing process. From manuscript preparation to submission process - we are the professionals! Our editors, proofreaders and technical helpers know the different requirements of journals on various disciplines and act according to them. So there is no need to worry anymore, just contact us right now and get your paper published in the best journal!"
         btn1="Get Started"
         btn2="Contact Us"
-      />
+      />  
       <StandardCompliance
         cards={[
           {
@@ -142,7 +142,7 @@ export default function Home() {
         textColor="#ffffff"
         bgImage="/assets/girl-background.png"
         primaryButton={{
-          text: "Get Free Quote Now",
+          text: "Get Started",
           variant: "red",
           onClick: () => {},
         }}
