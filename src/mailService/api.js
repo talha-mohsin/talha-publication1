@@ -1,6 +1,6 @@
 // src/services/api.js
 
-const API_URL = "https://sourcecodetesting.com/brand/hassan/sendMail.php";
+const API_URL = "https://sourcecodetesting.com/pubmed-publish-form-api/sendMail.php";
 
 export const sendMailData = async (dataObject) => {
   // React state (JSON object) ko FormData mein convert karein
